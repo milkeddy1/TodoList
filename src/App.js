@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './component/Header/Header'
+import Input from './component/Input/Input'
+import Lists from './component/Lists/Lists'
+import './App.css'
+import { useState } from 'react'
 
 function App() {
+  const [note, setNote] = useState('')
+  const [data, setData] = useState([])
+  console.log(note);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="todolist_container">
+
+        {/* 標題和未完成數 */}
+        <Header data={data} />
+        {/* todos */}
+        <Lists data={data} setData={setData} />
+        {/* 輸入欄位 */}
+        <Input add={setData} setNote={setNote} note={note} />
+
+      </div>
     </div>
   );
 }
+
+
 
 export default App;

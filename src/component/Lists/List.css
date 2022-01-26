@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+.lists{
+    height:550px ;
+}
+
+.list{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    font-family: 'Outfit', sans-serif;
+    margin: 1rem;
+    padding: 0.25rem;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+}
+
+.linethrough{
+    text-decoration: line-through;
+}
+
+.edit{
+    display: flex;
+    align-items: center;
+}
+
+input{
+    height: 30px;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
