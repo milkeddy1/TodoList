@@ -18,15 +18,27 @@ const useStyles = makeStyles({
 
 
 function List({ note, data, id, setData, complete }) {
+
     const classes = useStyles();
+
+
     function outLine() {
         setDisable(true)
     }
+
+    // 按鈕disable
     const [disable, setDisable] = useState(false)
+
+    // 按鈕編輯狀態
     const [edit, setEdit] = useState(false)
+
+    // 編輯輸入的文字
     const [data2, setData2] = useState([])
+
+    // 複製另一個data陣列可以根據id判斷塞入編輯的項目
     const newData = [...data]
-    console.log(newData);
+
+
     function editHandler() {
         newData.forEach((item) => {
             if (item.id === id) {
@@ -47,9 +59,9 @@ function List({ note, data, id, setData, complete }) {
                 <input type="text" value={data2} onChange={(e) => setData2(e.target.value)}></input>
             </div>
             <div className="buttons">
-                <Button className={classes.root} variant="contained" onClick={outLine} disabled={disable}  >DONE</Button>
+                {/* <Button className={classes.root} variant="contained" onClick={outLine} disabled={disable}  >DONE</Button> */}
                 <Button className={classes.margin} color="primary" variant="contained" disabled={disable} onClick={() => { setEdit(false); editHandler() }}  >Save</Button>
-                <Button className={classes.margin} color="secondary" variant="contained" aria-label="delete" >Delete</Button>
+                {/* <Button className={classes.margin} color="secondary" variant="contained" aria-label="delete" >Delete</Button> */}
             </div>
         </div>;
     } else {
